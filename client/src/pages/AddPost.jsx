@@ -271,12 +271,12 @@ const AddPost = ({ editingPost, setEditingPost, refreshPosts }) => {
 
         try {
             if (editingPost) {
-                await axios.put(`http://localhost:5000/api/posts/${editingPost._id}`, formData, {
+                await axios.put(`https://blog-appn-mern-api.vercel.app/api/posts/${editingPost._id}`, formData, {
                     headers: { "Content-Type": "multipart/form-data" },
                 });
                 setEditingPost(null);
             } else {
-                await axios.post("http://localhost:5000/api/posts", formData, {
+                await axios.post("https://blog-appn-mern-api.vercel.app/api/posts", formData, {
                     headers: { "Content-Type": "multipart/form-data" },
                 });
             }
