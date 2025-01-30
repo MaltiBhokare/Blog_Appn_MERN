@@ -164,7 +164,7 @@ const EditPost = () => {
 
     // Fetch post data when component is mounted
     useEffect(() => {
-        axios.get(`http://localhost:5000/api/posts/${id}`)
+        axios.get(`https://blog-appn-mern-api.vercel.app/api/posts/${id}`)
             .then((response) => setPost(response.data))
             .catch((error) => console.error("Error fetching post:", error));
     }, [id]);
@@ -177,7 +177,7 @@ const EditPost = () => {
     // Handle form submit (update post)
     const handleSubmit = (e) => {
         e.preventDefault();
-        axios.put(`http://localhost:5000/api/posts/${id}`, post)
+        axios.put(`https://blog-appn-mern-api.vercel.app/api/posts/${id}`, post)
             .then(() => {
                 navigate("/posts"); // Redirect to posts page after updating
             })
