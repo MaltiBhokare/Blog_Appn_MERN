@@ -161,14 +161,14 @@ const PostList = () => {
 
     // Fetch posts when the component is mounted
     useEffect(() => {
-        axios.get("http://localhost:5000/api/posts")
+        axios.get("https://blog-appn-mern-api.vercel.app/api/posts")
             .then((response) => setPosts(response.data))
             .catch((error) => console.error("Error fetching posts:", error));
     }, []);
 
     // Delete post function
     const handleDelete = (id) => {
-        axios.delete(`http://localhost:5000/api/posts/${id}`)
+        axios.delete(`https://blog-appn-mern-api.vercel.app/api/posts/${id}`)
             .then(() => {
                 setPosts(posts.filter(post => post._id !== id)); // Remove deleted post from state
             })
